@@ -4,9 +4,9 @@ The main goal of this repository is to identify and classify phishing websites u
 ## Table of Contents
 - [Introduction](#introduction)
 - [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Methodology](#methodology)
+- [Usage](#usage)
+- [Installation](#installation)
 - [Results](#results)
 
 # Introduction
@@ -17,3 +17,12 @@ Traditionally, the detection of phishing has heavily relied on analyzing URLs. T
 In response to this, I have developed a more robust approach to phishing detection in this repository. This approach analyzes not just URLs, but also the HTML content of web pages. By utilizing deep learning techniques, the model can extract and learn from complex features and patterns within the raw data. Deep learning, a branch of machine learning that uses multi-layered neural networks, is particularly effective for this task. It enables the model to delve into the actual contents of web pages, such as forms that ask for sensitive information, the presence of suspicious scripts, or the overall structure and design of the page, going beyond merely examining the structure of URLs.
 
 After processing both the URLs and HTML content, the model predicts whether the webpage is legitimate or a potential phishing threat. By combining URL and HTML content analysis, this approach offers a more comprehensive and reliable phishing detection system. Through this project, I hope to contribute to making the internet a safer place for users.
+
+# Dataset
+The 'look-before-you-leap' dataset, accessible on Kaggle, is employed in this project. It's a balanced dataset consisting of 45,373 instances, equally representing both benign and phishing web pages. Each instance encompasses a variety of HTML document elements such as texts, hyperlinks, images, tables, lists, and diverse URL components from subdomains to queries.
+
+The dataset's creator has already prudently removed URL prefixes like HTTP:// and HTTPS:// from the dataset. This essential modification allows the model to focus on the more critical parts of the URL. It also guarantees the model's consistent performance across different URL datasets, enhancing its generality and avoiding skewed results.
+
+The dataset comprises real-world data collected from Alexa.com for legitimate web pages and phishtank.com for phishing web pages. The use of these trusted sources guarantees a realistic data mix, creating a robust and authentic training environment for the deep learning model.
+
+# Methodology
