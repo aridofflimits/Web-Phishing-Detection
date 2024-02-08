@@ -26,3 +26,4 @@ The dataset's creator has already prudently removed URL prefixes like HTTP:// an
 The dataset comprises real-world data collected from Alexa.com for legitimate web pages and phishtank.com for phishing web pages. The use of these trusted sources guarantees a realistic data mix, creating a robust and authentic training environment for the deep learning model.
 
 # Methodology
+## Exploratory Data Analysis
