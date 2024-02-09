@@ -129,7 +129,7 @@ The percentage distribution of categories in both datasets is calculated and pri
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/5e4ac6e6-c94c-4796-814f-3a7dbfb9ae09)
 
 ### Visualizing Category Distribution Percentages
-Pie charts are created to visually represent the percentage distribution of categories in both datasets, offering an intuitive understanding of class proportions.
+Donut charts are created to visually represent the percentage distribution of categories in both datasets, offering an intuitive understanding of class proportions.
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/1fbbebed-56dc-4feb-b22a-486e505b0e0e)
 
