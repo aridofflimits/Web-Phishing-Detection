@@ -123,10 +123,10 @@ The category distribution in both datasets is visualized using bar charts, which
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/b34eb679-830b-4b70-b608-7c9770c9d79c)
 
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/5e4ac6e6-c94c-4796-814f-3a7dbfb9ae09)
+
 ### Distribution Percentages
 The percentage distribution of categories in both datasets is calculated and printed to provide a clearer view of class imbalance in percentage terms.
-
-![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/5e4ac6e6-c94c-4796-814f-3a7dbfb9ae09)
 
 ### Visualizing Category Distribution Percentages
 Donut charts are created to visually represent the percentage distribution of categories in both datasets, offering an intuitive understanding of class proportions.
