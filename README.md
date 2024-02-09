@@ -294,7 +294,7 @@ ________________________________________________________________________________
 ## Training
 
 ### 1. **Early Stopping**
-I use early stopping to prevent overfitting. Training stops if there's no improvement in validation loss for 3 consecutive epochs.
+I use early stopping to prevent overfitting. Training stops if there's no improvement in validation loss for 4 consecutive epochs.
 
 ### 2. **Training Data**
 The model is trained on URL and HTML content.
@@ -306,7 +306,7 @@ The model tries to predict whether each URL is spam or legitimate.
 We use a separate validation set to monitor the model's performance during training.
 
 ### 5. **Epochs and Batch Size**
-The model is trained for 25 epochs with a batch size of 8.
+The model is trained for 25 epochs with a batch size of 2.
 
 ### 6. **Callbacks**
 Early stopping is implemented as a callback function during training.
