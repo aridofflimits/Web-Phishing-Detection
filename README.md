@@ -137,7 +137,77 @@ The length of URLs and HTML content with respect to their categories is analyzed
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/538050c4-e68a-4122-9c07-4eec102e0c1c)
 
+## Preprocessing
 
+### 1. **Download NLTK Resources**
+The Natural Language Toolkit (NLTK) resources 'punkt', 'stopwords', and 'wordnet' are downloaded. These are used for tokenizing, removing stopwords, and lemmatizing words respectively.
+
+### 2. **Load Stopwords**
+The stopwords from the 'english' language are loaded into a set for efficient removal later.
+
+### 3. **Initialize Lemmatizer**
+The WordNetLemmatizer from NLTK is initialized. This is used to convert words to their base form.
+
+### 4. **Clean and Preprocess URL Data**
+The URLs are cleaned and preprocessed by converting to lowercase, removing 'http' or 'https', removing 'www', removing special characters, and removing extra spaces. The URLs are then tokenized, stopwords are removed, and words are lemmatized. Though there are no 'http' or 'https' in the dataset, I just wanted to make sure.
+
+```
+# Function to clean and preprocess URL data
+def preprocess_url(url):
+    url = url.lower()  # Convert to lowercase
+    url = re.sub(r'https?://', '', url)  # Remove http or https
+    url = re.sub(r'www\.', '', url)  # Remove www
+    url = re.sub(r'[^a-zA-Z0-9]', ' ', url)  # Remove special characters
+    url = re.sub(r'\s+', ' ', url).strip()  # Remove extra spaces
+    tokens = word_tokenize(url)  # Tokenize
+    tokens = [word for word in tokens if word not in STOPWORDS]  # Remove stopwords
+    tokens = [lemmatizer.lemmatize(word) for word in tokens]  # Lemmatization
+    return ' '.join(tokens)
+```
+
+### 5. **Clean and Preprocess HTML Data**
+The HTML data is cleaned and preprocessed by removing HTML tags, converting to lowercase, removing 'http' or 'https', removing special characters, and removing extra spaces. The HTML data is then tokenized, stopwords are removed, and words are lemmatized.
+
+```
+# Function to clean and preprocess HTML data
+def preprocess_html(html):
+    html = re.sub(r'<[^>]+>', ' ', html)  # Remove HTML tags
+    html = html.lower()  # Convert to lowercase
+    html = re.sub(r'https?://', '', html)  # Remove http or https
+    html = re.sub(r'[^a-zA-Z0-9]', ' ', html)  # Remove special characters
+    html = re.sub(r'\s+', ' ', html).strip()  # Remove extra spaces
+    tokens = word_tokenize(html)  # Tokenize
+    tokens = [word for word in tokens if word not in STOPWORDS]  # Remove stopwords
+    tokens = [lemmatizer.lemmatize(word) for word in tokens]  # Lemmatization
+    return ' '.join(tokens)
+```
+
+### 6. **Clean URL and HTML 'Data' Columns**
+The 'Data' columns in the URL and HTML dataframes are cleaned using the above preprocessing functions.
+
+### 7. **Define Maximum Length of Sequences**
+The maximum length of sequences for the URL and HTML data is defined.
+
+```
+max_url_length = 180
+max_html_length = 2000
+```
+
+### 8. **Define Maximum Number of Words**
+The maximum number of words/tokens is defined.
+
+```
+# Define the maximum number of words/tokens
+max_words = 10000
+```
+
+### 9. **URL and HTML Tokenization and Padding**
+The cleaned URL and HTML data are tokenized and padded to the maximum length of sequences. For URLs, character-level tokenization is used. For HTML data, word-level tokenization is used.
+
+### 10. **Encode 'Category' Column**
+The 'Category' column in the URL and HTML dataframes is encoded into numerical values using Label Encoding.
+
+12. **Split Datasets Into Training and Testing Sets**: The URL and HTML datasets are split into training and testing sets, with 80% of the data used for training and 20% used for testing.
 
 
 
