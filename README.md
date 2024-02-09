@@ -6,6 +6,7 @@ The main goal of this repository is to identify and classify phishing websites u
 - [Dataset](#dataset)
 - [Methodology](#methodology)
 - [Results](#results)
+- [Room For Improvement](#room-for-improvement)
 
 # Introduction
 Phishing attacks are increasingly prevalent in today's digital age. These malicious acts aim to deceive users into revealing sensitive information such as usernames, passwords, and credit card details by posing as trustworthy entities. The repercussions of these attacks can be serious, leading to identity theft, financial loss, and significant harm to an individual's or an organization’s reputation. 
@@ -218,7 +219,7 @@ The URL and HTML datasets are split into training and testing sets, with 80% of 
 ---
 
 ## Model Building
-The architecture of the model is inspired by this paper, but with several modifications to fine-tune the model's performance. These alterations include the addition of up to three Convolutional Layers, an increase in the number of filters within these layers from 32 to 128, and the introduction of Fully Connected Layers. These modifications serve as hyperparameters adjustments to enhance the model's learning capacity and accuracy. Below are modified hyperparameters:
+The architecture of the model is inspired by this [paper](https://www.sciencedirect.com/science/article/pii/S0957417423016858), but with several modifications to fine-tune the model's performance. These alterations include the addition of up to three Convolutional Layers, an increase in the number of filters within these layers from 32 to 128, and the introduction of Fully Connected Layers. These modifications serve as hyperparameters adjustments to enhance the model's learning capacity and accuracy. Below are modified hyperparameters:
 
 ```
 def create_model():
@@ -334,12 +335,21 @@ A line graph is created to visualize the model's loss on the training and valida
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/25a48273-0e02-426c-a2be-7fab9777226d)
 
-### 7. **Plot Training and Validation Accuracy**: A line graph is created to visualize the model's accuracy on the training and validation data across the epochs.
+### 7. **Plot Training and Validation Accuracy**
+A line graph is created to visualize the model's accuracy on the training and validation data across the epochs.
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/fc62ddbd-f71c-4c1a-916a-e919963e19f0)
 
 ---
 
 # Results
+Following the evaluation phase, the model was stored securely in Google Drive. Subsequently, this saved model was loaded for testing on a fresh benchmark dataset. The results from this test are presented below.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/1ffba4cd-111e-4ed0-8c7b-ff6a5746b209)
+
+The model demonstrated perfect performance with high accuracy on the benchmark dataset, successfully categorizing websites as either legitimate or spam based on their URLs and HTML content. Despite its complexity as a deep learning model, it achieved a notably low inference time, making predictions for the entire benchmark dataset in just 0.5 seconds. This efficiency makes it an excellent candidate for deployment and practical use.
+
+# Room For Improvement
+Despite the innovative approach of this model, which leverages both HTML and URL data to predict phishing websites, it isn't without limitations. As the landscape of social engineering, particularly phishing, continues to evolve, cybercriminals are persistently devising new strategies for exploitation. Consequently, this model might fall short when encountering unfamiliar phishing techniques. Moving forward, the goal is to develop a model capable of continuous learning, to better adapt to the ever-changing nature of phishing threats.
 
 
