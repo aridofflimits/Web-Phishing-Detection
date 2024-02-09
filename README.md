@@ -5,8 +5,6 @@ The main goal of this repository is to identify and classify phishing websites u
 - [Introduction](#introduction)
 - [Dataset](#dataset)
 - [Methodology](#methodology)
-- [Usage](#usage)
-- [Installation](#installation)
 - [Results](#results)
 
 # Introduction
@@ -279,6 +277,8 @@ Non-trainable params: 0 (0.00 Byte)
 __________________________________________________________________________________________________
 ```
 
+---
+
 ## Training
 
 ### 1. **Early Stopping**
@@ -298,5 +298,48 @@ The model is trained for 25 epochs with a batch size of 8.
 
 ### 6. **Callbacks**
 Early stopping is implemented as a callback function during training.
+
+---
+
+## Evaluation
+
+### 1. **Model Evaluation**
+The model's predictions on the test data are generated and converted to binary form (spam or legitimate).
+
+### 2. **Performance Metrics Calculation**
+Accuracy, precision, recall, and F1 score of the model are computed on the test data.
+
+### 3. **Metrics Display**
+The calculated metrics are printed for review.
+
+```
+Accuracy: 0.9794
+Precision: 0.9804
+Recall: 0.9781
+F1 Score: 0.9792
+```
+
+### 4. **Metrics Visualization**
+A bar chart is created to visualize the model's performance metrics.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/920edab6-908e-4f24-a095-1a5ce201f109)
+
+### 5. **Confusion Matrix**
+A confusion matrix is created to see the model's performance in more detail.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/624fd0ef-06d4-4df3-bd6c-67ad521d3ff8)
+
+### 6. **Plot Training and Validation Loss**
+A line graph is created to visualize the model's loss on the training and validation data across the epochs.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/25a48273-0e02-426c-a2be-7fab9777226d)
+
+### 7. **Plot Training and Validation Accuracy**: A line graph is created to visualize the model's accuracy on the training and validation data across the epochs.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/fc62ddbd-f71c-4c1a-916a-e919963e19f0)
+
+---
+
+# Results
 
 
