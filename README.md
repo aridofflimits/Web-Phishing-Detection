@@ -9,6 +9,7 @@ The main goal of this repository is to identify and classify phishing websites u
 - [Methodology](#methodology)
 - [Results](#results)
 - [Room For Improvement](#room-for-improvement)
+- [References](#references)
 
 # Introduction
 Phishing attacks are increasingly prevalent in today's digital age. These malicious acts aim to deceive users into revealing sensitive information such as usernames, passwords, and credit card details by posing as trustworthy entities. The repercussions of these attacks can be serious, leading to identity theft, financial loss, and significant harm to an individual's or an organization’s reputation. 
@@ -358,4 +359,9 @@ The model demonstrated perfect performance with high accuracy on the benchmark d
 # Room For Improvement
 Despite the innovative approach of this model, which leverages both HTML and URL data to predict phishing websites, it isn't without limitations. As the landscape of social engineering, particularly phishing, continues to evolve, cybercriminals are persistently devising new strategies for exploitation. Consequently, this model might fall short when encountering unfamiliar phishing techniques. Moving forward, the goal is to develop a model capable of continuous learning, to better adapt to the ever-changing nature of phishing threats.
 
+---
+
+# References
+- Opara, C., Chen, Y., & Wei, B. (2023). Look before you leap: Detecting phishing web pages by exploiting raw URL and HTML characteristics. Expert Systems with Applications, 236, 121183.
+- Benavides-Astudillo, E., Fuertes, W., Sanchez-Gordon, S., Nuñez-Agurto, D., & Rodríguez-Galán, G. (2023). A phishing-attack-detection model using natural language processing and deep learning. Applied Sciences, 13(9), 5275. https://doi.org/10.3390/app13095275
 
