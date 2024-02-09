@@ -279,5 +279,24 @@ Non-trainable params: 0 (0.00 Byte)
 __________________________________________________________________________________________________
 ```
 
+## Training
+
+### 1. **Early Stopping**
+I use early stopping to prevent overfitting. Training stops if there's no improvement in validation loss for 3 consecutive epochs.
+
+### 2. **Training Data**
+The model is trained on URL and HTML content.
+
+### 3. **Target Data**
+The model tries to predict whether each URL is spam or legitimate.
+
+### 4. **Validation Data**
+We use a separate validation set to monitor the model's performance during training.
+
+### 5. **Epochs and Batch Size**
+The model is trained for 25 epochs with a batch size of 8.
+
+### 6. **Callbacks**
+Early stopping is implemented as a callback function during training.
 
 
