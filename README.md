@@ -1,6 +1,8 @@
 # Web Phishing Detection with Deep Learning
 The main goal of this repository is to identify and classify phishing websites using deep learning techniques. Phishing websites are malicious sites that try to trick users into providing sensitive information, such as usernames, passwords, and credit card details, by pretending to be trustworthy entities. The raw data being analyzed here are URLs and HTML content of websites. URL analysis involves examining the structure and contents of the URL for signs of phishing, such as misspelled domain names or suspicious subdomains. HTML content analysis involves examining the actual contents of the webpage, such as forms that ask for sensitive information, the presence of suspicious scripts, or the overall structure and design of the page.
 
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Dataset](#dataset)
@@ -23,6 +25,8 @@ The 'look-before-you-leap' dataset, accessible on Kaggle, is employed in this pr
 The dataset's creator has already prudently removed URL prefixes like HTTP:// and HTTPS:// from the dataset. This essential modification allows the model to focus on the more critical parts of the URL. It also guarantees the model's consistent performance across different URL datasets, enhancing its generality and avoiding skewed results.
 
 The dataset comprises real-world data collected from Alexa.com for legitimate web pages and phishtank.com for phishing web pages. The use of these trusted sources guarantees a realistic data mix, creating a robust and authentic training environment for the deep learning model.
+
+---
 
 # Methodology
 ## Exploratory Data Analysis
@@ -348,6 +352,8 @@ Following the evaluation phase, the model was stored securely in Google Drive. S
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/1ffba4cd-111e-4ed0-8c7b-ff6a5746b209)
 
 The model demonstrated perfect performance with high accuracy on the benchmark dataset, successfully categorizing websites as either legitimate or spam based on their URLs and HTML content. Despite its complexity as a deep learning model, it achieved a notably low inference time, making predictions for the entire benchmark dataset in just 0.5 seconds. This efficiency makes it an excellent candidate for deployment and practical use.
+
+---
 
 # Room For Improvement
 Despite the innovative approach of this model, which leverages both HTML and URL data to predict phishing websites, it isn't without limitations. As the landscape of social engineering, particularly phishing, continues to evolve, cybercriminals are persistently devising new strategies for exploitation. Consequently, this model might fall short when encountering unfamiliar phishing techniques. Moving forward, the goal is to develop a model capable of continuous learning, to better adapt to the ever-changing nature of phishing threats.
