@@ -137,6 +137,8 @@ The length of URLs and HTML content with respect to their categories is analyzed
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/538050c4-e68a-4122-9c07-4eec102e0c1c)
 
+---
+
 ## Preprocessing
 
 ### 1. **Download NLTK Resources**
@@ -215,6 +217,67 @@ The 'Category' column in the URL and HTML dataframes is encoded into numerical v
 ### 11. **Split Datasets Into Training and Testing Sets**
 The URL and HTML datasets are split into training and testing sets, with 80% of the data used for training and 20% used for testing.
 
+---
+
+## Model Building
+The architecture of the model is inspired by this paper, but with several modifications to fine-tune the model's performance. These alterations include the addition of up to three Convolutional Layers, an increase in the number of filters within these layers from 32 to 128, and the introduction of Fully Connected Layers. These modifications serve as hyperparameters adjustments to enhance the model's learning capacity and accuracy. Below are modified hyperparameters:
+
+```
+def create_model():
+    # Adjusted hyperparameters
+    embedding_dim = 32  # Increased embedding dimension
+    conv_filters = 128  # Increased number of filters in convolutional layers
+    kernel_size = 10 # Increased kernel size
+    dense_units_1 = 128 
+    dense_units_2 = 64  
+    learning_rate = 0.0005  # Adjusted learning rate
+```
+
+### Model Architecture
+
+```
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to                  
+==================================================================================================
+ url_input (InputLayer)      [(None, 180)]                0         []                            
+                                                                                                  
+ html_input (InputLayer)     [(None, 2000)]               0         []                            
+                                                                                                  
+ url_embedding (Embedding)   (None, 180, 32)              1216      ['url_input[0][0]']           
+                                                                                                  
+ html_embedding (Embedding)  (None, 2000, 32)             320000    ['html_input[0][0]']          
+                                                                                                  
+ conv1d (Conv1D)             (None, 171, 128)             41088     ['url_embedding[0][0]']       
+                                                                                                  
+ conv1d_1 (Conv1D)           (None, 1991, 128)            41088     ['html_embedding[0][0]']      
+                                                                                                  
+ max_pooling1d (MaxPooling1  (None, 85, 128)              0         ['conv1d[0][0]']              
+ D)                                                                                               
+                                                                                                  
+ max_pooling1d_1 (MaxPoolin  (None, 995, 128)             0         ['conv1d_1[0][0]']            
+ g1D)                                                                                             
+                                                                                                  
+ flatten (Flatten)           (None, 10880)                0         ['max_pooling1d[0][0]']       
+                                                                                                  
+ flatten_1 (Flatten)         (None, 127360)               0         ['max_pooling1d_1[0][0]']     
+                                                                                                  
+ concatenate_layer (Concate  (None, 138240)               0         ['flatten[0][0]',             
+ nate)                                                               'flatten_1[0][0]']           
+                                                                                                  
+ dense1 (Dense)              (None, 128)                  1769484   ['concatenate_layer[0][0]']   
+                                                          8                                       
+                                                                                                  
+ dense2 (Dense)              (None, 64)                   8256      ['dense1[0][0]']              
+                                                                                                  
+ output_layer (Dense)        (None, 1)                    65        ['dense2[0][0]']              
+                                                                                                  
+==================================================================================================
+Total params: 18106561 (69.07 MB)
+Trainable params: 18106561 (69.07 MB)
+Non-trainable params: 0 (0.00 Byte)
+__________________________________________________________________________________________________
+```
 
 
 
