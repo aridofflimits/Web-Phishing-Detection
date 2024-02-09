@@ -27,3 +27,118 @@ The dataset comprises real-world data collected from Alexa.com for legitimate we
 
 # Methodology
 ## Exploratory Data Analysis
+### Overview of Data
+This part begins by printing the shape of both URL and HTML datasets to understand the size of the data in terms of the number of samples.
+
+```
+URL Dataset Shape: (45373, 4)
+HTML Dataset Shape: (45373, 4)
+```
+
+### Content Examination
+Random samples from both datasets are displayed to get a sense of the actual content being worked with, including the format and variability of URLs and HTML content.
+
+```
+Sample URLs:
+25715                       www.isoc.org/internet/history/
+18810                                       www.aeon-jp.cc
+40421                         miolkoijhjhjhb.gq/CC_POSTALE
+18744    www.theatlantic.com/unbound/digitalreader/dr20...
+28869                 dimacs.rutgers.edu/Workshops/Faster/
+Name: Data, dtype: object
+
+Sample HTML Contents:
+34050    <!DOCTYPE html><!--[if IE 8]><html class="ie8 ...
+28401    <!DOCTYPE html><html class="no-js" lang="ja" p...
+30395    <!DOCTYPE html><!--[if IE 8]><html class="no-j...
+16411    <!DOCTYPE html>', '<html itemscope="" itemtype...
+17942    <!DOCTYPE html>', '', '<html dir="rtl" prefix=...
+Name: Data, dtype: object
+```
+
+### Data Types
+The data types of columns in both datasets are printed to ensure that the data is in the expected format, which is crucial for preprocessing and modeling.
+```
+URL Dataset Data Types:
+Category            object
+Data                object
+Cleaned_Data        object
+Category_Encoded     int64
+dtype: object
+
+HTML Dataset Data Types:
+Category            object
+Data                object
+Cleaned_Data        object
+Category_Encoded     int64
+dtype: object
+```
+
+### Missing Values
+A check for missing values in both datasets is performed, as missing data can affect model training and might require imputation or removal.
+```
+Missing Values in URL Dataset:
+Category            0
+Data                0
+Cleaned_Data        0
+Category_Encoded    0
+dtype: int64
+
+Missing Values in HTML Dataset:
+Category            0
+Data                0
+Cleaned_Data        0
+Category_Encoded    0
+dtype: int64
+```
+
+### Value Counts
+The distribution of categories (e.g., phishing/spam vs. legitimate/ham) in both datasets is examined to understand the balance or imbalance between classes, which can impact model performance.
+```
+Category Distribution in URL Dataset:
+ham     22687
+spam    22686
+Name: Category, dtype: int64
+
+Category Distribution in HTML Dataset:
+ham     22687
+spam    22686
+Name: Category, dtype: int64
+```
+
+### Unique Values
+The number of unique URLs and HTML contents is calculated and printed to assess data diversity and redundancy.
+```
+Unique URLs: 44078
+Unique HTML Contents: 32707
+```
+
+### Distribution of Categories
+The category distribution in both datasets is visualized using bar charts, which helps in understanding class balance and may inform the need for stratification or rebalancing techniques.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/b34eb679-830b-4b70-b608-7c9770c9d79c)
+
+### Distribution Percentages
+The percentage distribution of categories in both datasets is calculated and printed to provide a clearer view of class imbalance in percentage terms.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/5e4ac6e6-c94c-4796-814f-3a7dbfb9ae09)
+
+### Visualizing Category Distribution Percentages
+Pie charts are created to visually represent the percentage distribution of categories in both datasets, offering an intuitive understanding of class proportions.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/1fbbebed-56dc-4feb-b22a-486e505b0e0e)
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/636dd305-9d46-4511-808d-4488098b4065)
+
+### URL and HTML Length Analysis
+The length of URLs and HTML content with respect to their categories is analyzed and visualized using box plots. This can reveal patterns such as longer or shorter lengths being associated with phishing/spam or legitimate content, which might be useful features for modeling.
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/7deb2ef0-7c54-4cee-a1d7-367de4fc056d)
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/538050c4-e68a-4122-9c07-4eec102e0c1c)
+
+
+
+
+
+
