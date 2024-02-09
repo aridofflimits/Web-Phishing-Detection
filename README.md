@@ -185,6 +185,11 @@ def preprocess_html(html):
 ### 6. **Clean URL and HTML 'Data' Columns**
 The 'Data' columns in the URL and HTML dataframes are cleaned using the above preprocessing functions.
 
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/97d730cf-9a00-44ab-aa36-34e0bc7eb308)
+
+![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/81119ab3-ee0d-4ecc-9895-f178b4a876a6)
+
+
 ### 7. **Define Maximum Length of Sequences**
 The maximum length of sequences for the URL and HTML data is defined.
 
@@ -207,7 +212,8 @@ The cleaned URL and HTML data are tokenized and padded to the maximum length of 
 ### 10. **Encode 'Category' Column**
 The 'Category' column in the URL and HTML dataframes is encoded into numerical values using Label Encoding.
 
-12. **Split Datasets Into Training and Testing Sets**: The URL and HTML datasets are split into training and testing sets, with 80% of the data used for training and 20% used for testing.
+### 11. **Split Datasets Into Training and Testing Sets**
+The URL and HTML datasets are split into training and testing sets, with 80% of the data used for training and 20% used for testing.
 
 
 
