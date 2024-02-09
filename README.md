@@ -118,7 +118,7 @@ Unique URLs: 44078
 Unique HTML Contents: 32707
 ```
 
-## URL and HTML Distribution
+### URL and HTML Distribution
 The distribution of HTML and URL is visualized using donut charts.
 
 ![image](https://github.com/aridofflimits/Web-Phishing-Detection/assets/147245715/d485510d-6a03-4e18-b9ec-282a0d557b3e)
